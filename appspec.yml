@@ -2,12 +2,11 @@ version: 0.0
 os: windows
 files:
   - source: /
-    destination: C:\HomeApplication
-
+    destination: C:\inetpub\wwwroot
 hooks:
   BeforeInstall:
-    - location: \install-dotnet6.ps1
-      runas: Administrator
-  ApplicationStart:
-    - location: \start-webapi.ps1
-      runas: Administrator
+    - location: scripts\StopWebsite.ps1
+      timeout: 300
+  AfterInstall:
+    - location: scripts\StartWebsite.ps1
+      timeout: 300
