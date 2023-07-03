@@ -1,0 +1,18 @@
+version: 0.0
+os: windows
+files:
+  - source: /
+    destination: C:\HomeApplication
+
+hooks:
+  BeforeInstall:
+    - location: \install-dotnet6.ps1
+      runas: Administrator
+
+  AfterInstall:
+    - location: \enable-iis.ps1
+      runas: Administrator
+
+  ApplicationStart:
+    - location: \start-webapi.ps1
+      runas: Administrator
