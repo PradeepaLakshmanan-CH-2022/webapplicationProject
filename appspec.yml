@@ -8,8 +8,6 @@ hooks:
   BeforeInstall:
     - location: \install-dotnet6.ps1
       runas: Administrator
-
- 
   ApplicationStart:
     - location: \start-webapi.ps1
       runas: Administrator
