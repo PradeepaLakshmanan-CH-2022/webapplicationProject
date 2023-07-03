@@ -5,8 +5,8 @@ files:
     destination: C:\inetpub\wwwroot
 hooks:
   BeforeInstall:
-    - location: scripts\StopWebsite.ps1
+    - location: \StopWebsite.ps1
       timeout: 300
   AfterInstall:
-    - location: scripts\StartWebsite.ps1
+    - location: \StartWebsite.ps1
       timeout: 300
